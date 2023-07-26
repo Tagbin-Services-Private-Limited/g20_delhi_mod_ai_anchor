@@ -1,0 +1,60 @@
+.search-box-custom-select {
+    border: none;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+@media screen and (min-width: 756px) {
+    .search-box-custom-select {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .search-box-custom-select {
+        width: 74vw;
+        min-width: none;
+    }
+}
+
+.result-box-custom-add-new-village {
+    position: absolute;
+    top: 5;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 10px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    margin-top: 10px;
+    max-height: 30vh;
+    overflow-y: scroll;
+}
+
+.bg-custom-hover:hover {
+    background-color: #d5e8ef;
+
+}
+
+.bg-custom-hover {
+    background-color: white;
+    z-index: 99;
+}
+
+.custom-cross-search-select {
+    right: 1.2%;
+    top: 1%;
+    filter: invert(98%) sepia(1%) saturate(42%) hue-rotate(110deg) brightness(114%) contrast(86%);
+}
+
+.custom-cross-search-select:hover {
+    filter: invert(73%) sepia(3%) saturate(4%) hue-rotate(350deg) brightness(85%) contrast(81%);
+}
+
+.invalid {
+    border: 1px solid #ff0000;
+}

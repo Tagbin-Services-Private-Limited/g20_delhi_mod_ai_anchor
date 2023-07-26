@@ -1,0 +1,42 @@
+.privacy_main {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(152 136 177 / 25%) 14px 2px 30px 4px;
+    border-radius: 15px;
+    margin: 0px 10px;
+}
+
+.custom-rounded-class-terms-screen {
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 20px;
+}
+
+.headingTerms {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+
+ol>li::marker {
+    font-weight: bold;
+}
+
+@media screen and (max-width:767px) {
+    .custom-rounded-class-terms-screen {
+        border-radius: 15px;
+        background-color: white;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        padding: 3px;
+    }
+
+    .footerTerms {
+        margin-top: 20px;
+    }
+
+    .terms_content {
+        margin-bottom: 100px;
+    }
+}

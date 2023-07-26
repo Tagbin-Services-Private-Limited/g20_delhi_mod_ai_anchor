@@ -1,0 +1,37 @@
+@media (max-width: 350px) and (min-width: 280px) {
+  .search_map_functionality .search_sub_mobile {
+    padding: 0 20px 100px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .search_map_functionality {
+    flex-direction: column-reverse;
+  }
+
+  .search_map_functionality .search_sub,
+  .search_sub_mobile {
+    width: 100% !important;
+  }
+
+  .search_sub_mobile {
+    padding: 5px 20px 60px !important;
+  }
+}
+
+.map_image_detail {
+  object-fit: contain;
+}
+
+.details-box {
+  color: #000;
+  font-size: 16px;
+}
+
+.map_item {
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

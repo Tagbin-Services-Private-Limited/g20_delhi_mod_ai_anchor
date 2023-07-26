@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Logo Unveil",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 2,
+        "name": "Aadhaar: An Overview",
+        "type": "pdf",
+        "content" : "https://s3.ap-south-1.amazonaws.com/exhibits.tagbin.in/g20pune/aadharQRCode/2.pdf.pdf"
+    },
+    {
+        "id": 3,
+        "name": "Aadhaar: A Unique Identity For The People",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 4,
+        "name": "Aadhaar: A Synopsis",
+        "type": "pdf",
+        "content" : "https://s3.ap-south-1.amazonaws.com/exhibits.tagbin.in/g20pune/aadharQRCode/4.pdf.pdf"
+    },
+    {
+        "id": 5,
+        "name": "Aadhaar Face Authentication RD Service App",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 6,
+        "name": "How Aadhaar Helped Find A Lost Child",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 7,
+        "name": "Aadhaar: A Proof Of Your Identity",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 8,
+        "name": "The Mechanics Of Aadhaar",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 9,
+        "name": "Face Authentication: A Synopsis",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 10,
+        "name": "Characteristics Of Face Authentication",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 11,
+        "name": "Demographic Details For Aadhaar",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 12,
+        "name": "Aadhaar Ensures Transparent Transactions",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 13,
+        "name": "How To Install mAadhaar App On Your Smartphone",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 14,
+        "name": "mAadhaar App Features And Usage",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 15,
+        "name": "Offline Authentication: Aadhaar PVC",
+        "type": "vid",
+        "content" : ""
+    },
+    {
+        "id": 16,
+        "name": "Offline Verification Of Aadhaar",
+        "type": "vid",
+        "content" : ""
+    }
+]

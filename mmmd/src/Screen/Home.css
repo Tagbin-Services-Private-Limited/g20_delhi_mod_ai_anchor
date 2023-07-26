@@ -1,0 +1,73 @@
+.main_body{
+    background-color: #F5EAD6 !important;
+    background-image: url(../../public/asset/images/background/bg_mb.jpg);
+    /* height: 100vh; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2%;
+}
+
+.main_head{
+    color: #442A00;
+    font-family: 'Libre Baskerville';
+    font-size: 4vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem
+}
+.sub_head{
+    color: #442A00;
+    font-family: 'Libre Bodoni';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+.sub_title{
+    color: #476807;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.step{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.pledge_btn{
+    border-radius: 30px;
+    padding: 13px;
+    min-width: 180px;
+    background: linear-gradient(132deg, #976700 0%, #714501 100%);
+    box-shadow: 0px 0.3267997205257416px 1.6339986324310303px 0px rgba(0, 0, 0, 0.15), 0px 0.3267997205257416px 3.2679972648620605px 0px #5A2E00 inset, 0px 2.541712522506714px 6.989709377288818px 0px rgba(251, 201, 38, 0.63) !important;
+    backdrop-filter: blur(8px) !important;
+    color: #fff;
+    border: none;
+}
+
+.card{
+    border-radius: 3px;
+    background: linear-gradient(132deg, #C19840 0%, #885D1C 100%);
+    box-shadow: 0px 0.15716683864593506px 0.7858342528343201px 0px rgba(0, 0, 0, 0.15), 0px 0.15716683864593506px 1.5716685056686401px 0px #5A2E00 inset, 0px 1.2223784923553467px 3.3615407943725586px 0px rgba(251, 201, 38, 0.63);
+    backdrop-filter: blur(4px);
+    color: #EED688;
+}
+
+.card-title{
+    color: #EED688;
+    font-family: 'Inter';
+    font-size: 15px;
+    line-height: normal;
+}
+
+.card-text{
+    color: #EED688;
+    font-family: 'Inter';
+    font-size: 13px;
+    line-height: normal;
+}

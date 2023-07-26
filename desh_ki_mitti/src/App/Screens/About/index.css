@@ -1,0 +1,252 @@
+.custom-rounded-class-about-screen {
+  border-radius: 15px;
+}
+
+.selectiveColor {
+  background-color: #75cf8f;
+  padding: 8px 8px 8px 8px;
+  color: #fff;
+  overflow-wrap: "break-word";
+}
+
+.About_mobile {
+  padding: 0px;
+  margin: 0px;
+  font-size: 13px;
+}
+
+.about_layout {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(152 136 177 / 25%) 14px 2px 30px 4px;
+  border-radius: 15px;
+  margin: 0 10px;
+}
+
+.first_part {
+  scroll-margin: 90px;
+}
+
+.mission {
+  scroll-margin: 79px;
+}
+
+.objectives {
+  scroll-margin: 63px;
+}
+.programme,
+.work,
+.pratibha,
+.gaon,
+.facts{
+  scroll-margin: 80px;
+}
+
+@media (max-width: 766px) and (min-width: 360px) {
+  .mobile_about_allsection {
+    padding-bottom: 50px;
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile_about_allsection {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 280px) {
+
+  .mobile_first_part_about,
+  .mobile_intro_mission,
+  .mobile_intro_objective,
+  .mobile_first_part_programme,
+  .mobile_gaon,
+  .mobile_work,
+  .mobile_pratibha,
+  .mobile_facts {
+    scroll-margin: 100px;
+  }
+}
+
+.about-video {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
+
+.video-about-banner {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.iframe-video {
+  width: 432px;
+  height: 243px;
+}
+
+@media (max-width: 1417px) and (min-width: 1300px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 374px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 1144px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 316px;
+    height: 177px;
+  }
+}
+
+@media (max-width: 1144px) and (min-width: 1166px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 284px;
+    height: 142px;
+  }
+}
+
+@media (max-width: 1144px) and (min-width: 990px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 280px;
+    height: 157px;
+  }
+}
+
+@media (max-width: 990px) and (min-width: 766px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 217px;
+    height: 122px;
+  }
+}
+
+@media (max-width: 766px) and (min-width: 610px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 279px;
+    height: 157px;
+  }
+}
+
+@media (max-width: 610px) and (min-width: 510px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 235px;
+    height: 132px;
+  }
+}
+
+@media (max-width: 510px) and (min-width: 409px) {
+  .video-about-banner {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 188px;
+    height: 106px;
+  }
+}
+
+@media (max-width: 409px) and (min-width: 300px) {
+  .video-about-banner {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 125px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 300px) and (min-width: 280px) {
+  .video-about-banner {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iframe-video {
+    width: 121px;
+    height: 68px;
+  }
+}
+
+.videoWrapper {
+  overflow: hidden;
+}
+
+.video-background {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.content{
+      background: #FFFFFF;
+      box-shadow: 0px 2.20588px 11.0294px rgba(94, 71, 220, 0.2);
+      border-radius: 11.0294px;
+}
+
+/* .heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
