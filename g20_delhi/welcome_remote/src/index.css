@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.logo{
+  height: 200px;
+}
+.main{
+  padding-top: 5vh;
+}
+.search-bar{
+  border-radius: 30px;
+  padding: 5px;
+  min-width: 600px;
+}
+.search-btn{
+  border-radius: 30px;
+  padding: 8px 20px;
+  background-color: #0b82c8;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+
+}
+.search-btn:hover{
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+.search-btn:focus{
+  outline: none;
+}
+.search-btn:active{
+  background-color: #d5d5d5;
+}
+.clear-btn{
+  border-radius: 30px;
+  padding: 8px 20px;
+  background-color: #f7941c;
+  border: none;
+  color: #000;
+  font-weight: bold;
+}
+.clear-btn:hover{
+  background-color: #e5e5e5;
+  cursor: pointer;
+} 
+.clear-btn:focus{
+  outline: none;
+}
+.clear-btn:active{
+  background-color: #d5d5d5;
+}
+.play{
+  border-radius: 30px;
+  padding: 8px 20px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #418b00;
+}
+.pause{
+  border-radius: 30px;
+  padding: 8px 20px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #0b56c6;
+}
+.stop{
+  border-radius: 30px;
+  padding: 8px 20px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #c60b0b;
+}
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  object-fit: cover !important;
+  margin: 0 !important;
+  top: 0;
+  padding: none;
+  position: fixed; /* optional depending on what you want to do in your app */
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
