@@ -39,7 +39,10 @@ export default function VideoPlayer() {
         muted
         onEnded={() => {
             if(!videoSrc.includes('default'))
-         { videoRef.current.currentTime = 0;}
+         { 
+          
+          setVideoSrc('/default.mp4')
+          videoRef.current.currentTime = 0;}
         }}
       >
         <source src={videoSrc} type="video/mp4" />

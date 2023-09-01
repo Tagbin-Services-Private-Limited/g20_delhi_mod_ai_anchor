@@ -79,13 +79,13 @@ const WebcamCapture = () => {
         }
       } else {
         setSearchResults([]);
-        socket.current.emit('send', 'default');
+        // socket.current.emit('send', 'default');
         setName('No one at the screen from our db !')
       }
     } catch (error) {
       console.error('Error searching for image:', error);
       setSearchResults([]);
-      socket.current.emit('send', 'default');
+    //   socket.current.emit('send', 'default');
       setName('No one at the screen from our db !')
     }
   };
