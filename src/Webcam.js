@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import AWS from 'aws-sdk';
 import {Buffer} from 'buffer';
+import draw from './utilities'
+import * as tf from '@tensorflow/tfjs';
 import io from 'socket.io-client';
 AWS.config.update({
     accessKeyId: "AKIAXJJIYLL3J7PUBPQW",
@@ -20,17 +22,11 @@ const WebcamCapture = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [name,setName]= useState('')
   const [isCameraOn, setIsCameraOn] = useState(true);
-  const startCapture = () => {
-    setCaptureMode(true);
+  const [timer, setTimer] = useState(null);
+  const [lang,setSelectedLanguage]= useState('fr')
+  const canvasRef = useRef(null);
   
-      if (webcamRef.current) {
-        const screenshot = webcamRef.current.getScreenshot();
-        setCaptureImage(screenshot);
-        setCaptureMode(false);
-        searchImage(screenshot);
-      }
- 
-  };
+  const blazeface = require('@tensorflow-models/blazeface')
   useEffect(() => {
     socket.current = io.connect('localhost:8000');
     socket.current.emit('camera', true);
@@ -38,12 +34,15 @@ const WebcamCapture = () => {
             console.log(msg)
     setIsCameraOn(msg);
         });
-    
+        socket.current.on('receive', (msg) => {
+          console.log(msg)
+          setSelectedLanguage(msg);
+              });
     const interval = setInterval(() => {
         if(isCameraOn){
-      startCapture();
+   runFacedetection();
         } 
-    }, 2000); // Capture image every 5 seconds
+    }, 1000); // Capture image every 5 seconds
     const sendSocketMessage = () => {
         socket.current.emit('camera', false);
       };
@@ -52,67 +51,101 @@ const WebcamCapture = () => {
       window.addEventListener('beforeunload', sendSocketMessage);
     return () =>{ clearInterval(interval);       window.removeEventListener('beforeunload', sendSocketMessage); socket.current.disconnect();  }// Clean up the interval on component unmount
   }, []);
-  const searchImage = async (imageData) => {
+  const runFacedetection = async () => {
+
+    const model = await blazeface.load()
+    console.log("FaceDetection Model is Loaded..") 
+
+      detect(model);
+  
  
-    try {
-      const params = {
-        CollectionId: 'g20', // Change to your collection name
-        Image: {
-          Bytes: Buffer.from(imageData.split(",")[1], 'base64'),
-        },
-        MaxFaces: 10,
-        FaceMatchThreshold: 90,
-      };
+}
+const returnTensors = false;
 
-      const searchResponse = await rekognition.searchFacesByImage(params).promise();
+const detect = async (model) => {
+ 
+    if(
+        typeof webcamRef.current !== "undefined" &&
+        webcamRef.current !== null &&
+        webcamRef.current.video.readyState === 4
+      ){
+        // Get video properties
+        const video = webcamRef.current.video;
+        const videoWidth = webcamRef.current.video.videoWidth;
+        const videoHeight = webcamRef.current.video.videoHeight;
+   
+        //Set video height and width
+        webcamRef.current.video.width = videoWidth;
+        webcamRef.current.video.height = videoHeight;
+   
+        //Set canvas height and width
+          canvasRef.current.width = videoWidth;
+          canvasRef.current.height = videoHeight;
 
-      if (searchResponse.FaceMatches && searchResponse.FaceMatches.length > 0) {
-        const results = searchResponse.FaceMatches.map(match => ({
-          similarity: match.Similarity.toFixed(2),
-          imageId: match.Face.ExternalImageId,
-        }));
+        // Make detections
+
+        const prediction = await model.estimateFaces(video, returnTensors);
+
+        console.log(prediction)
+if(prediction.length==1){
+  socket.current.emit("send",lang)
+}
+        const ctx = canvasRef.current.getContext("2d");
        
-        setSearchResults(results);
-        if(name!==results[0]?.imageId?.split(".")[0]){
-        socket.current.emit('send', results[0]?.imageId?.split(".")[0]);
-        setName(results[0]?.imageId)
-        }
-      } else {
-        setSearchResults([]);
-        // socket.current.emit('send', 'default');
-        setName('No one at the screen from our db !')
+        draw(prediction, ctx)
       }
-    } catch (error) {
-      console.error('Error searching for image:', error);
-      setSearchResults([]);
-    //   socket.current.emit('send', 'default');
-      setName('No one at the screen from our db !')
+
     }
-  };
 
 
-  return (
-    <>
-    {isCameraOn&&
-    <div className="App">
-    
-      <Webcam
-        audio={false}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-      />
-      
+    return (
+      <>
+      {isCameraOn&&
+      <div className="App">
+        <header className="App-header">
+          <Webcam
+           ref={webcamRef}
+           style={{
+             position: "absolute",
+             marginLeft: "auto",
+             marginRight: "auto",
+             top:100,
+             left:0,
+             right:80,
+             textAlign: "center",
+             zIndex:9,
+             width:640,
+             height:480,
+          }}
+           />
+  
+          <canvas
+           ref={canvasRef}
+           style={{
+            position: "absolute",
+            marginLeft: "auto",
+            marginRight: "auto",
+            top:100,
+            left:0,
+            right:80,
+            textAlign: "center",
+            zIndex:9,
+            width:640,
+            height:480,
+         }}
+          />
+          
  
-      {(
-        <div style={{position:"absolute",bottom:"50px"}}>
-          <h2>Search Results</h2>
-           Hi {name.split('.')[0]}
-        </div>
-      )}
-    </div>
-      }
-      </>
-  );
+           
+          <div>
+         <h2>Search Results</h2>
+         Hi {name.split('.')[0]}
+       </div>
+        </header>
+      </div>
+        }
+        </>
+    );
 };
 
 export default WebcamCapture;

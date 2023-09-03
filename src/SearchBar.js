@@ -6,12 +6,12 @@ function SearchBar({ onSearch, onClear }) {
     const handleInputChange = (event) => {
         const newSearchTerm = event.target.value;
         setSearchTerm(newSearchTerm);
-        onSearch(newSearchTerm); // Call onSearch as the user types
+         // Call onSearch as the user types
     };
 
     const handleClear = () => {
         setSearchTerm('');
-        onClear();
+        onSearch(searchTerm);
     };
 
     return (
@@ -19,12 +19,12 @@ function SearchBar({ onSearch, onClear }) {
             <input
                 className='search-bar'
                 type="text"
-                placeholder="Enter a name"
+                placeholder="Enter VIP name"
                 value={searchTerm}
                 onChange={handleInputChange} // Trigger search as the user types
             />
             <button className='clear-btn mx-2' onClick={handleClear}>
-                Clear
+                Submit
             </button>
         </div>
     );
